@@ -35,8 +35,10 @@ $galData = $db->getRows($conditions);
             <?php foreach($galData['images'] as $imgRow){ ?>
 		<div class="img-box" id="imgb_<?php echo $imgRow['id']; ?>">
                 <img src="uploads/images/<?php echo $imgRow['file_name']; ?>">
-		<a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow['id']; ?>')">delete</a>
-            <?php } ?>
+		<?php if (($row['user_id'] == $_SESSION["id"]) || ($_SESSION["username"] == "admin")) { ?>
+			<a href="javascript:void(0);" class="badge badge-danger" onclick="deleteImage('<?php echo $imgRow['id']; ?>')">delete</a>
+            	<?php } else { } ?>
+	    <?php } ?>
             </div>
         <?php } ?>
     </div>

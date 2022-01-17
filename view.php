@@ -14,6 +14,18 @@ $conditions['return_type'] = 'single';
 $galData = $db->getRows($conditions); 
 ?>
 
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{ font: 14px sans-serif; text-align: center; }
+	img{
+    		max-width:450px;
+    		max-height:450px;
+	}
+    </style>
+</head>
 <div class="row">
     <div class="col-md-12">
         <h5><?php echo !empty($galData['title'])?$galData['title']:''; ?></h5>

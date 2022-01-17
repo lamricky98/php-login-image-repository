@@ -87,7 +87,7 @@ $actionLabel = !empty($_GET['id'])?'Edit':'Add';
                     <input type="text" name="title" class="form-control" placeholder="Enter title" value="<?php echo !empty($galData['title'])?$galData['title']:''; ?>" >
                 </div>
 		<div class="form-group">
-			<input type="checkbox" id="private" name="private" value="yes" <?php if ($galData['is_public'] == "1") echo "checked='checked'"; ?>>
+			<input type="checkbox" id="private" name="private" value="yes" <?php if (!array_key_exists('is_public',$galData)) {} elseif ($galData['is_public'] == "0") echo "checked='checked'"; ?>>
 			<label for="private"> Post privately?</label><br>
 		</div>
                 <a href="index.php" class="btn btn-secondary">Back</a>
